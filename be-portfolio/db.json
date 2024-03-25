@@ -1,0 +1,246 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe ahihihi",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "avatar": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c27dc0a4-6276-4036-968e-51b70613de6d/dfbouue-a609b605-d553-4450-b56e-9cd707317231.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2MyN2RjMGE0LTYyNzYtNDAzNi05NjhlLTUxYjcwNjEzZGU2ZFwvZGZib3V1ZS1hNjA5YjYwNS1kNTUzLTQ0NTAtYjU2ZS05Y2Q3MDczMTcyMzEuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.49hw3fXDtkGsM1XMh3yk-kwhdUCeRfXTwtdeQnrfuZ0",
+      "email": "dangtienhung.dev@gmail.com",
+      "phone": "0123456789",
+      "address": "Hanoi, Vietnam",
+      "education": {
+        "school": "University of Science",
+        "degree": "Bachelor",
+        "major": "Information Technology",
+        "graduation": "2024",
+        "gpa": "3.5"
+      }
+    }
+  ],
+  "overview": {
+    "title": "Overview",
+    "desc": "I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!",
+    "experience": "3 years",
+    "projects": "20+",
+    "clients": "10+",
+    "languages": [
+      "English",
+      "Vietnamese"
+    ],
+    "works": [
+      {
+        "title": "Fullstack Developer",
+        "image": "https://via.placeholder.com/150"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "1",
+      "title": "HTML 12",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "id": 2,
+      "title": "CSS 22",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "id": 3,
+      "title": "JavaScript 3",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "id": 4,
+      "title": "React4",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "id": 7,
+      "title": "NextJS 5",
+      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ab cum nulla nostrum sapiente qui suscipit neque laboriosam culpa eligendi quo voluptate, doloremque animi, eos expedita aliquid porro quod ad!"
+    }
+  ],
+  "projects": {
+    "title": "Projects",
+    "desc": "Following projects showcases my skills and experience through real-world examples of my work. Each project is briefly described with links to code repositories and live demos in it. It reflects my ability to solve complex problems, work with different technologies, and manage projects effectively.",
+    "items": [
+      {
+        "id": 1,
+        "title": "Project 1",
+        "sortDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "images": [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ],
+        "linkCode": "https://github.com",
+        "linkDemo": "https://dangtienhung.com",
+        "startDate": "2021-01-01",
+        "endDate": "2021-01-31",
+        "status": "Completed",
+        "role": "Leader",
+        "teamSize": 5,
+        "techonology": {
+          "frontend": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux",
+            "Bootstrap"
+          ],
+          "backend": [
+            "NodeJS",
+            "Express"
+          ],
+          "database": [
+            "MongoDB",
+            "redis"
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "title": "Project 1",
+        "sortDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "images": [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ],
+        "linkCode": "https://github.com",
+        "linkDemo": "https://dangtienhung.com",
+        "startDate": "2021-01-01",
+        "endDate": "2021-01-31",
+        "status": "Completed",
+        "role": "Leader",
+        "teamSize": 5,
+        "techonology": {
+          "frontend": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux",
+            "Bootstrap"
+          ],
+          "backend": [
+            "NodeJS",
+            "Express"
+          ],
+          "database": [
+            "MongoDB",
+            "redis"
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "title": "Project 1",
+        "sortDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "images": [
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150",
+          "https://via.placeholder.com/150"
+        ],
+        "linkCode": "https://github.com",
+        "linkDemo": "https://dangtienhung.com",
+        "startDate": "2021-01-01",
+        "endDate": "2021-01-31",
+        "status": "Completed",
+        "role": "Leader",
+        "teamSize": 5,
+        "techonology": {
+          "frontend": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "React",
+            "Redux",
+            "Bootstrap"
+          ],
+          "backend": [
+            "NodeJS",
+            "Express"
+          ],
+          "database": [
+            "MongoDB",
+            "redis"
+          ]
+        }
+      }
+    ]
+  },
+  "certificate": {
+    "title": "Certificate",
+    "desc": "I have completed various online courses and obtained certificates in different fields. These certificates reflect my continuous learning and passion for technology. I have completed various online courses and obtained certificates in different fields. These certificates reflect my continuous learning and passion for technology.",
+    "items": [
+      {
+        "id": 1,
+        "title": "Certificate 1",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "https://via.placeholder.com/150",
+        "link": "https://dangtienhung.com"
+      },
+      {
+        "id": 2,
+        "title": "Certificate 2",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "https://via.placeholder.com/150",
+        "link": "https://dangtienhung.com"
+      },
+      {
+        "id": 3,
+        "title": "Certificate 3",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "image": "https://via.placeholder.com/150",
+        "link": "https://dangtienhung.com"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "id": 1,
+      "title": "Frontend Developer",
+      "company": "Company 1",
+      "startDate": "2021-01-01",
+      "endDate": "2021-01-31",
+      "image": "https://via.placeholder.com/150",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "id": 2,
+      "title": "Backend Developer",
+      "company": "Company 2",
+      "startDate": "2021-01-01",
+      "endDate": "2021-01-31",
+      "image": "https://via.placeholder.com/150",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "id": 3,
+      "title": "Fullstack Developer",
+      "company": "Company 3",
+      "startDate": "2021-01-01",
+      "endDate": "2021-01-31",
+      "image": "https://via.placeholder.com/150",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    }
+  ],
+  "socials": {
+    "facebook": "https://facebook.com",
+    "twitter": "https://twitter.com",
+    "linkedin": "https://linkedin.com",
+    "github": "https://github.com",
+    "instagram": "https://instagram.com"
+  },
+  "menu": [
+    "About",
+    "Work",
+    "Contact"
+  ]
+}
