@@ -2,7 +2,6 @@ import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 import Buttons from '~/pages/UiElements/Buttons';
 import Chart from '~/pages/Chart';
-import EditSkill from '~/pages/EditSkill/EditSkill';
 import FormElements from '~/pages/Form/FormElements';
 import FormLayout from '~/pages/Form/FormLayout';
 import NotFoundPage from '~/pages/NotFound';
@@ -11,6 +10,7 @@ import Settings from '~/pages/Settings';
 import SignIn from '~/pages/Authentication/SignIn';
 import SignUp from '~/pages/Authentication/SignUp';
 import SkillPage from '~/pages/SkillPage/SkillPage';
+import SocialPage from '~/pages/SocialPage/SocialPage';
 import Tables from '~/pages/Tables';
 
 export const routes = createBrowserRouter([
@@ -100,11 +100,11 @@ export const routes = createBrowserRouter([
     ),
   },
   {
-    path: '/editskill/:id',
+    path: '/socials',
     element: (
       <>
-        <PageTitle title="Edit Skill" />
-        <EditSkill />
+        <PageTitle title="Social" />
+        <SocialPage />
       </>
     ),
   },

@@ -11,7 +11,7 @@ const Buttons = () => {
       <div className="mb-10 bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="py-4 border-b border-stroke px-7 dark:border-strokedark">
           <h3 className="font-medium text-black dark:text-white">
-            Normal Button
+            Normal Button ahihi
           </h3>
         </div>
 

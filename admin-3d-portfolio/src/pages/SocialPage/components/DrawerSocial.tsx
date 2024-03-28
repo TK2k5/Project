@@ -2,30 +2,30 @@ import * as yup from 'yup';
 
 import { Drawer, Typography } from '@material-tailwind/react';
 import {
-  useAddSkillMutation,
-  useGetOneSkillQuery,
-  useUpdateSkillMutation,
-} from '~/store/services/skill.service';
+  useAddSocialMutation,
+  useGetOneSocialQuery,
+  useUpdateSocialMutation,
+} from '~/store/services/social.service';
 import { useAppDispatch, useAppSelector } from '~/store/hooks';
 
 import { RootState } from '~/store/store';
-import { setSkillId } from '~/store/slice/skill.slice';
+import { setSocialId } from '~/store/slice/social.slice';
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-interface DrawerSkillProps {
+interface DrawerSocialProps {
   open: boolean;
   closeDrawer: () => void;
 }
 
 const schema = yup.object({
-  title: yup.string().required('Skill name is required'),
-  desc: yup.string().required('Desc is required'),
+  social: yup.string().required('Social name is required'),
+  link: yup.string().required('Link is required'),
 });
 
-const DrawerSkill = ({ open, closeDrawer }: DrawerSkillProps) => {
+const DrawerSocial = ({ open, closeDrawer }: DrawerSocialProps) => {
   const {
     register,
     handleSubmit,
@@ -34,38 +34,38 @@ const DrawerSkill = ({ open, closeDrawer }: DrawerSkillProps) => {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const { idSkill } = useAppSelector((state: RootState) => state.skill);
+  const { idSocial } = useAppSelector((state: RootState) => state.social);
   const dispatch = useAppDispatch();
 
-  const { data } = useGetOneSkillQuery(idSkill || '');
-  console.log('🚀 ~ DrawerSkill ~ data:', data);
+  const { data } = useGetOneSocialQuery(idSocial || '');
+  console.log('🚀 ~ DrawerSocial ~ data:', data);
 
-  const [handleAddSkill] = useAddSkillMutation();
-  const [handleUpdateSkill] = useUpdateSkillMutation();
+  const [handleAddSocial] = useAddSocialMutation();
+  const [handleUpdateSocial] = useUpdateSocialMutation();
 
-  const onSubmit = (data: { title: string; desc: string }) => {
-    if (idSkill) {
-      handleUpdateSkill({ ...data, id: Number(idSkill) });
-      toast.success('Skill updated successfully');
-      dispatch(setSkillId(null));
+  const onSubmit = (data: { social: string; link: string }) => {
+    if (idSocial) {
+      handleUpdateSocial({ ...data, id: Number(idSocial) });
+      toast.success('Social updated successfully');
+      dispatch(setSocialId(null));
     } else {
-      handleAddSkill(data);
-      toast.success('Skill added successfully');
-      dispatch(setSkillId(null));
+      handleAddSocial(data);
+      toast.success('Social added successfully');
+      dispatch(setSocialId(null));
     }
     closeDrawer();
   };
 
   useEffect(() => {
-    if (idSkill && !Array.isArray(data) && data) {
+    if (idSocial && !Array.isArray(data) && data) {
       console.log('first');
-      setValue('title', data.title);
-      setValue('desc', data.desc);
+      setValue('social', data.social);
+      setValue('link', data.link);
     } else {
-      setValue('title', '');
-      setValue('desc', '');
+      setValue('social', '');
+      setValue('link', '');
     }
-  }, [data, idSkill, setValue]);
+  }, [data, idSocial, setValue]);
 
   return (
     <Drawer
@@ -77,7 +77,7 @@ const DrawerSkill = ({ open, closeDrawer }: DrawerSkillProps) => {
     >
       <div className="flex items-center justify-between mb-6">
         <Typography variant="h5" color="blue-gray">
-          {idSkill ? 'Edit Skill' : 'Add Skill'}{' '}
+          {idSocial ? 'Edit Social' : 'Add Social'}{' '}
         </Typography>
         <button onClick={closeDrawer}>
           <svg
@@ -105,49 +105,49 @@ const DrawerSkill = ({ open, closeDrawer }: DrawerSkillProps) => {
         <div className="w-full">
           <div className="mb-4.5">
             <label className="mb-2.5 block text-black dark:text-white">
-              Skill Name
+              Social Name
             </label>
             <input
               type="text"
-              placeholder="Skill name"
-              {...register('title')}
+              placeholder="Social name"
+              {...register('social')}
               className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             />
-            {errors.title && (
-              <p className="text-sm text-red-500">{errors.title.message}</p>
+            {errors.social && (
+              <p className="text-sm text-red-500">{errors.social.message}</p>
             )}
           </div>
 
           <div className="mb-6">
             <label className="mb-2.5 block text-black dark:text-white">
-              Desc
+              Link
             </label>
             <textarea
               rows={6}
-              {...register('desc')}
-              placeholder="Type your Desc"
+              {...register('link')}
+              placeholder="Type your Link"
               className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             ></textarea>
-            {errors.desc && (
-              <p className="text-sm text-red-500">{errors.desc.message}</p>
+            {errors.link && (
+              <p className="text-sm text-red-500">{errors.link.message}</p>
             )}
           </div>
         </div>
 
         <button className="flex mt-auto mb-10 justify-center w-full p-3 font-medium rounded bg-primary text-gray hover:bg-opacity-90">
-          {idSkill ? 'Edit Skill' : 'Add Skill'}
+          {idSocial ? 'Edit Social' : 'Add Social'}
         </button>
       </form>
     </Drawer>
   );
 };
 
-const useGetOneSkill = (id: string | null) => {
+const useGetOneSocial = (id: string | null) => {
   if (!id) return null;
 
-  const { data } = useGetOneSkillQuery(id);
+  const { data } = useGetOneSocialQuery(id);
 
   return data;
 };
 
-export default DrawerSkill;
+export default DrawerSocial;

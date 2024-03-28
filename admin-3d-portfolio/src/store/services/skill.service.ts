@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { ISkill } from './../../../../3d-portfolio/src/types/skill.type';
+import { ISkill } from '~/types/skill.type';
 
 export const skillApi = createApi({
   reducerPath: 'skillApi',
@@ -27,22 +27,25 @@ export const skillApi = createApi({
       }),
       invalidatesTags: (result, error, id) => [{ type: 'Skill', id }],
     }),
-    addSkill: builder.mutation<void, ISkill>({
-      query: (skill: ISkill) => ({
-        url: `/skills`,
+    addSkill: builder.mutation<ISkill, Partial<ISkill>>({
+      query: (body) => ({
+        url: '/skills',
         method: 'POST',
-        body: skill,
+        body,
       }),
       invalidatesTags: [{ type: 'Skill', id: 'LIST' }],
     }),
-    getOneSkill: builder.query<ISkill, number | string>({
-      query: (id: number | string) => `/skills/${id}`,
+    getOneSkill: builder.query<ISkill, string>({
+      query: (id) => {
+        return `/skills/${id}`;
+      },
+      providesTags: (result, error, id) => [{ type: 'Skill', id }],
     }),
     updateSkill: builder.mutation<ISkill, Partial<ISkill>>({
-      query: (skill) => ({
-        url: `/skills/${skill.id}`,
+      query: (body) => ({
+        url: `/skills/${body.id}`,
         method: 'PUT',
-        body: skill,
+        body,
       }),
       invalidatesTags: (result, error, { id }) => [{ type: 'Skill', id }],
     }),

@@ -36,29 +36,19 @@
   },
   "skills": [
     {
-      "id": "1",
-      "title": "HTML 12",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      "title": "HTML",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "CSS 22",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-      "id": 3,
-      "title": "JavaScript 3",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      "title": "JavaScript",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "id": 3
     },
     {
       "id": 4,
-      "title": "React4",
+      "title": "React",
       "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-      "id": 7,
-      "title": "NextJS 5",
-      "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ab cum nulla nostrum sapiente qui suscipit neque laboriosam culpa eligendi quo voluptate, doloremque animi, eos expedita aliquid porro quod ad!"
     }
   ],
   "projects": {
@@ -231,13 +221,33 @@
       "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
     }
   ],
-  "socials": {
-    "facebook": "https://facebook.com",
-    "twitter": "https://twitter.com",
-    "linkedin": "https://linkedin.com",
-    "github": "https://github.com",
-    "instagram": "https://instagram.com"
-  },
+  "socials": [
+    {
+      "social": "facebook",
+      "link": "https://facebook.com",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "social": "twitter",
+      "link": "https://twitter.com"
+    },
+    {
+      "id": 3,
+      "social": "linkedin",
+      "link": "https://linkedin.com"
+    },
+    {
+      "id": 4,
+      "social": "github",
+      "link": "https://github.com"
+    },
+    {
+      "id": 5,
+      "social": "instagram",
+      "link": "https://instagram.com"
+    }
+  ],
   "menu": [
     "About",
     "Work",
