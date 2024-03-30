@@ -1,19 +1,21 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { projectApi } from './services/project.service';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { skillApi } from './services/skill.service';
 import skillReducer from './slice/skill.slice';
-import { socialApi } from './services/social.service';
-import socialReducer from './slice/social.slice';
+
+const middleware = [skillApi.middleware, projectApi.middleware];
 
 export const store = configureStore({
   reducer: {
+    // skillApi
     [skillApi.reducerPath]: skillApi.reducer,
     skill: skillReducer,
-    [socialApi.reducerPath]: socialApi.reducer,
-    social: socialReducer,
+    // projectApi
+    [projectApi.reducerPath]: projectApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(skillApi.middleware, socialApi.middleware),
+    getDefaultMiddleware().concat(middleware),
 });
 
 setupListeners(store.dispatch);

@@ -77,7 +77,7 @@ const DrawerSocial = ({ open, closeDrawer }: DrawerSocialProps) => {
     >
       <div className="flex items-center justify-between mb-6">
         <Typography variant="h5" color="blue-gray">
-          {idSocial ? 'Edit Social' : 'Add Social'}{' '}
+          {idSocial ? 'Edit Social' : 'Add Social'}
         </Typography>
         <button onClick={closeDrawer}>
           <svg

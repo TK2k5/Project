@@ -3,11 +3,13 @@ import './css/satoshi.css';
 import 'jsvectormap/dist/css/jsvectormap.css';
 import 'flatpickr/dist/flatpickr.min.css';
 import 'react-toastify/dist/ReactToastify.css';
+import 'react-quill/dist/quill.snow.css';
 
 import App from './App';
 import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ReactQuill from 'react-quill';
 import { ThemeProvider } from '@material-tailwind/react';
 import { ToastContainer } from 'react-toastify';
 import { store } from './store/store';

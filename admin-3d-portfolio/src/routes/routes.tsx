@@ -6,11 +6,11 @@ import FormElements from '~/pages/Form/FormElements';
 import FormLayout from '~/pages/Form/FormLayout';
 import NotFoundPage from '~/pages/NotFound';
 import PageTitle from '~/components/PageTitle';
+import ProjectPage from '~/pages/projects/project-page';
 import Settings from '~/pages/Settings';
 import SignIn from '~/pages/Authentication/SignIn';
 import SignUp from '~/pages/Authentication/SignUp';
 import SkillPage from '~/pages/SkillPage/SkillPage';
-import SocialPage from '~/pages/SocialPage/SocialPage';
 import Tables from '~/pages/Tables';
 
 export const routes = createBrowserRouter([
@@ -99,15 +99,7 @@ export const routes = createBrowserRouter([
       </>
     ),
   },
-  {
-    path: '/socials',
-    element: (
-      <>
-        <PageTitle title="Social" />
-        <SocialPage />
-      </>
-    ),
-  },
+  { path: '/projects', element: <ProjectPage /> },
   {
     path: '*',
     element: <NotFoundPage />,

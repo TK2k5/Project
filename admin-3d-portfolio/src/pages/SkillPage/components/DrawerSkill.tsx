@@ -77,7 +77,7 @@ const DrawerSkill = ({ open, closeDrawer }: DrawerSkillProps) => {
     >
       <div className="flex items-center justify-between mb-6">
         <Typography variant="h5" color="blue-gray">
-          {idSkill ? 'Edit Skill' : 'Add Skill'}{' '}
+          Add Skill
         </Typography>
         <button onClick={closeDrawer}>
           <svg
@@ -135,7 +135,7 @@ const DrawerSkill = ({ open, closeDrawer }: DrawerSkillProps) => {
         </div>
 
         <button className="flex mt-auto mb-10 justify-center w-full p-3 font-medium rounded bg-primary text-gray hover:bg-opacity-90">
-          {idSkill ? 'Edit Skill' : 'Add Skill'}
+          Send Message
         </button>
       </form>
     </Drawer>
