@@ -33,3 +33,28 @@ export interface IProjectDocs {
   title: string;
   desc: string;
 }
+
+export interface IProjectForm {
+  title: string;
+  sortDesc?: string;
+  desc: string;
+  images?: string[];
+  linkCode?: string;
+  linkDemo?: string;
+  startDate?: string;
+  endDate?: string;
+  status?: 'Completed' | 'In Progress' | 'Planned';
+  role?:
+    | 'Leader'
+    | 'BA'
+    | 'QA'
+    | 'Developer'
+    | 'Designer'
+    | 'DevOps'
+    | 'Other'
+    | 'Intern';
+  teamSize?: number;
+  fe: string;
+  be: string;
+  db: string;
+}

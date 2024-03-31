@@ -21,7 +21,7 @@ const ProjectPage = () => {
 
   useEffect(() => {
     if (!data) return;
-    setProjects(data.items);
+    setProjects(data);
   }, [data]);
   if (!data) return <div>Loading...</div>;
 

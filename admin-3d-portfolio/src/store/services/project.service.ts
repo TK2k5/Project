@@ -6,14 +6,12 @@ export const projectApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000' }),
   tagTypes: ['Project'],
   endpoints: (builder) => ({
-    getAllProjects: builder.query<IProjectDocs, void>({
+    getAllProjects: builder.query<IProject[], void>({
       query: () => '/projects',
       providesTags: (result) => {
         return result
           ? [
-              ...result.items.map(
-                ({ id }) => ({ type: 'Project', id }) as const,
-              ),
+              ...result.map(({ id }) => ({ type: 'Project', id }) as const),
               { type: 'Project', id: 'LIST' },
             ]
           : [{ type: 'Project', id: 'LIST' }];
