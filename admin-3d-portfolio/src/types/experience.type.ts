@@ -4,6 +4,6 @@ export interface IExperience {
   company: string;
   startDate: string;
   endDate: string;
-  image: string;
+  images?: string[];
   desc: string;
 }

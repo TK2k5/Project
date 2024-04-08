@@ -195,33 +195,40 @@
       }
     ]
   },
-  "experience": [
+  "experiences": [
     {
-      "id": 1,
+      "title": "DevOps",
+      "company": "asdasd",
+      "startDate": "2024-04-08",
+      "endDate": "2024-04-23",
+      "desc": "<p>ádasdasd</p>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1712585561/Marathon/fdithiaju3ij16fqgmwr.jpg"
+      ],
+      "id": 4
+    },
+    {
       "title": "Frontend Developer",
-      "company": "Company 1",
-      "startDate": "2021-01-01",
-      "endDate": "2021-01-31",
-      "image": "https://via.placeholder.com/150",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-    },
-    {
-      "id": 2,
-      "title": "Backend Developer",
       "company": "Company 2",
-      "startDate": "2021-01-01",
-      "endDate": "2021-01-31",
-      "image": "https://via.placeholder.com/150",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      "startDate": "2024-04-08",
+      "endDate": "2024-04-18",
+      "desc": "<p>Yayayaay</p>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1712585287/Marathon/fou7lvg9x9il3trn5aij.jpg"
+      ],
+      "id": 5
     },
     {
-      "id": 3,
-      "title": "Fullstack Developer",
+      "title": "Backend Developer update",
       "company": "Company 3",
-      "startDate": "2021-01-01",
-      "endDate": "2021-01-31",
-      "image": "https://via.placeholder.com/150",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+      "startDate": "2024-04-08",
+      "endDate": "2024-05-02",
+      "desc": "<h3 class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Cua hoàng đế vàng (Golden King Crab)</strong></h3><p class=\"ql-align-justify\">So với 2 loại cua trên, Golden King Crab có kích thước nhỏ hơn, dễ nhận biết bởi lớp vỏ màu vàng nâu chứa nhiều gai nhọn. Thịt cua chứa ít chất béo, có vị ngọt dịu nhưng rất thơm và chắc, giá cua hoàng đế vàng lại phải chăng nên nhiều người ưa chuộng. Nó sống rải rác ở vùng biển Thái Bình Dương, vùng biển Nhật Bản và quần đảo Aleut.</p><p class=\"ql-align-center\"><span style=\"background-color: initial;\"><img src=\"https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/uploads/images/tin-tuc/163779/Originals/gia%CC%81%20cua%20hoa%CC%80ng%20%C4%91e%CC%82%CC%81%203.jpg\" alt=\"giá cua hoàng đế - hình 3\" height=\"817\" width=\"1200\"></span></p><h2 class=\"ql-align-justify\"><strong style=\"background-color: initial;\">3. Cua hoàng đế mua ở đâu?</strong></h2><p class=\"ql-align-justify\">Bạn nên mua cua hoàng đế tươi sống tại các địa chỉ chuyên nhập hải sản uy tín, có tên tuổi. Một số nhà hàng cao cấp cũng có phục vụ cua hoàng đế tươi sống, chất lượng. Tuy nhiên, cần tham khảo giá cua hoàng đế trước khi mua để không bị hố giá. Giá cua hoàng đế đông lạnh sẽ rẻ hơn nhưng chắc chắn độ ngon cũng giảm đi nhiều.</p><h2 class=\"ql-align-justify\"><strong style=\"background-color: initial;\">4. Giá cua hoàng đế bao nhiêu?</strong></h2><p class=\"ql-align-justify\">Nếu bạn chưa biết giá cua hoàng đế bao nhiêu thì có thể tham khảo danh sách FPT Shop tổng hợp như sau:</p><ul><li class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Cua hoàng đế đỏ:</strong>&nbsp;Từ 1.800.000 - 3.200.000 đồng/kg (tươi sống), 1.100.000 - 1.600.000 đồng/kg (cua ngộp) và 800.000 - 1.000.000 đồng/kg (đông lạnh).</li><li class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Cua hoàng đế xanh:</strong>&nbsp;Từ 1.500.000 - 2.300.000 đồng/kg (tươi sống), 1.000.000 - 1.400.000 đồng/kg (cua ngộp).</li><li class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Cua hoàng đế vàng:</strong>&nbsp;Từ 1.300.000 - 1.800.000 đồng/kg (tươi sống), 900.000 - 1.300.000 đồng/kg (cua ngộp).</li></ul><p class=\"ql-align-justify\">Lưu ý: Giá trong bài của&nbsp;<a href=\"https://fptshop.com.vn/\" rel=\"noopener noreferrer\" target=\"_blank\" style=\"color: rgb(1, 104, 250); background-color: transparent;\">FPT Shop</a>&nbsp;chỉ mang tính tham khảo và cập nhật tại thời điểm viết bài.</p><h2 class=\"ql-align-justify\"><strong style=\"background-color: initial;\">5. Phân biệt cua huỳnh đế và cua hoàng đế</strong></h2><p class=\"ql-align-justify\">Nhiều người vẫn hay nhầm cua hoàng đế và cua huỳnh đế (spanner crab) vì tên gọi khá giống nhau. Song, 2 loại cua này hoàn toàn khác nhau, cụ thể:</p><ul><li class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Xuất xứ:</strong>&nbsp;Cua hoàng đế thường sống ở vùng biển Alaska (Mỹ) còn cua huỳnh đế tập trung ở các vùng biển ôn đới hay vùng phía Đông Nam Thái Bình Dương.</li><li class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Hình dáng:</strong>&nbsp;Cua hoàng đế nhìn như con nhện khổng lồ với sải chân rất dài, còn cua huỳnh đế như 1 con bọ lớn với phần chân cực ngắn.</li><li class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Chất lượng thịt</strong>: Cua hoàng đế có thịt ngọt thơm, dai và chắc, tập trung nhiều ở chân. Cua huỳnh đế lại tập trung thịt ngon ở phần thân.</li><li class=\"ql-align-justify\"><strong style=\"background-color: initial;\">Giá thành:&nbsp;</strong>Giá cua hoàng đế thường cao hơn cua huỳnh đế một chút.</li></ul><p class=\"ql-align-center\"><span style=\"background-color: initial;\"><img src=\"https://images.fpt.shop/unsafe/filters:quality(90)/fptshop.com.vn/uploads/images/tin-tuc/163779/Originals/gia%CC%81%20cua%20hoa%CC%80ng%20%C4%91e%CC%82%CC%81%204.jpg\" alt=\"giá cua hoàng đế - hình 5\" height=\"901\" width=\"1200\"></span></p><h2 class=\"ql-align-justify\"><strong style=\"background-color: initial;\">6. Cách chọn mua cua hoàng đế ngon</strong></h2>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1712585697/Marathon/ly0rvezxgersj9agodkt.jpg",
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1712585698/Marathon/wulvnhbwzcijelsxqx2d.jpg"
+      ],
+      "id": 6
     }
   ],
   "socials": {
