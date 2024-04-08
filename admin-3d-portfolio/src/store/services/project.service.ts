@@ -17,8 +17,8 @@ export const projectApi = createApi({
           : [{ type: 'Project', id: 'LIST' }];
       },
     }),
-    deleteProject: builder.mutation<void, string>({
-      query: (id: string) => ({
+    deleteProject: builder.mutation<void, number>({
+      query: (id: number) => ({
         url: `/projects/${id}`,
         method: 'DELETE',
       }),

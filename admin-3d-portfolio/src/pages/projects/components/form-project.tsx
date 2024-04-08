@@ -39,6 +39,7 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
     register,
     setValue,
     watch,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -102,6 +103,10 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
       technology,
     };
     await handleCreateProject(projectInfo).then(() => {
+      reset();
+      setSortDesc('');
+      setDesc('');
+      setImages([]);
       closeDrawer();
     });
   };
