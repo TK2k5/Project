@@ -3,10 +3,19 @@ import { EditIcon, EyeIcon, TrashIcon } from '~/components/icons/icons';
 import Breadcrumb from '~/components/Breadcrumbs/Breadcrumb';
 import { Button } from '@material-tailwind/react';
 import DefaultLayout from '~/layout/DefaultLayout';
+import Loader from '~/common/Loader';
 import { formatDate } from '~/utils/format-date';
 import { motion } from 'framer-motion';
+import { useGetExperiencesQuery } from '~/store/services/experience.service';
+import { useState } from 'react';
 
 const ExperiencePage = () => {
+  const { data, isLoading, isError } = useGetExperiencesQuery();
+  console.log('🚀 ~ ExperiencePage ~ data:', data);
+  const [open, setOpen] = useState(false);
+
+  if (isLoading) return <Loader />;
+  if (isError) return <div>Error</div>;
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Experience" />
@@ -31,7 +40,7 @@ const ExperiencePage = () => {
           </div>
         </div>
 
-        {/* {data &&
+        {data &&
           data.length > 0 &&
           data.map((experience) => (
             <div
@@ -99,7 +108,7 @@ const ExperiencePage = () => {
                 </div>
               </div>
             </div>
-          ))} */}
+          ))}
       </div>
     </DefaultLayout>
   );

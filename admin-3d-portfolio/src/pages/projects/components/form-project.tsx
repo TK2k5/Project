@@ -1,14 +1,21 @@
 import * as yup from 'yup';
 
 import { Drawer, IconButton, Typography } from '@material-tailwind/react';
-import { memberPosition, statusArray } from '../init';
+import { IProject, IProjectForm } from '~/types/project.type';
+import { useAppDispatch, useAppSelector } from '~/store/hooks';
+import {
+  useCreateProjectMutation,
+  useGetOneProjectQuery,
+  useUpdateProjectMutation,
+} from '~/store/services/project.service';
 import { useEffect, useState } from 'react';
 
-import { IProjectForm } from '~/types/project.type';
 import ReactQuill from 'react-quill';
+import { RootState } from '~/store/store';
 import SelectV2 from '~/components/Forms/SelectGroup/select-v2';
+import { setProjectId } from '~/store/slice/project.slice';
+import { toast } from 'react-toastify';
 import { uploadImage } from '../utils/upload-image';
-import { useCreateProjectMutation } from '~/store/services/project.service';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -16,6 +23,9 @@ interface FormProjectProps {
   open: boolean;
   closeDrawer: () => void;
 }
+
+const memberPosition = ['leader', 'member', 'tester'];
+const statusArray = ['progress', 'done', 'test'];
 
 const schema = yup.object({
   title: yup.string().required('Title is required'),
@@ -34,37 +44,32 @@ const schema = yup.object({
 });
 
 const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
+  const dispatch = useAppDispatch();
+  const { idProject } = useAppSelector((state: RootState) => state.project);
+
   const {
     handleSubmit,
     register,
-    setValue,
-    watch,
     reset,
+    setValue,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
-  // useEffect(() => {
-  //   // register('desc', { required: true, minLength: 15 });
-  // }, [register]);
-
-  // const onEditorStateChange = (editorState: string) => {
-  //   setValue('desc', editorState);
-  // };
-
-  // const editorContent = watch('desc');
 
   const [handleCreateProject] = useCreateProjectMutation();
+  const [handleUpdateProject] = useUpdateProjectMutation();
 
   const [sortDesc, setSortDesc] = useState('');
   const [desc, setDesc] = useState('');
   const [images, setImages] = useState<string[]>([]);
-  console.log('🚀 ~ FormProject ~ images:', images);
 
-  const handleOnChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleUploadImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
+    if (!files) return;
+
     const result = await uploadImage(files);
-    if (result) setImages(result);
+    setImages(result!);
   };
 
   /* select status */
@@ -83,14 +88,45 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
     setPosition(value);
   };
 
-  /* handle submit form */
+  const { data: dataProject } = useGetOneProjectQuery(
+    idProject ? idProject.toString() : '0',
+  );
+
+  useEffect(() => {
+    // reset form when close drawer
+    if (!open) {
+      reset();
+      setSortDesc('');
+      setDesc('');
+      setImages([]);
+    }
+  }, [open, reset]);
+
+  useEffect(() => {
+    if (idProject && dataProject) {
+      setValue('title', dataProject.title);
+      setValue('linkCode', dataProject.linkCode || '');
+      setValue('linkDemo', dataProject.linkDemo || '');
+      setValue('teamSize', dataProject.teamSize || 0);
+      setValue('startDate', dataProject.startDate || '');
+      setValue('endDate', dataProject.endDate || '');
+      setValue('fe', dataProject?.techonology?.frontend?.join(', ') || '');
+      setValue('be', dataProject?.techonology?.backend?.join(', ') || '');
+      setValue('db', dataProject?.techonology?.backend?.join(', ') || '');
+      setSortDesc(dataProject.sortDesc || '');
+      setDesc(dataProject.desc || '');
+      setImages(dataProject.images || []);
+    }
+  }, [idProject, dataProject, setValue]);
+
+  // hand submit form
   const onSubmit = async (data: any) => {
     const { fe, be, db, ...rest } = data;
     // convert string to array
     data.fe = fe.split(', ');
     data.be = be.split(', ');
     data.db = db.split(', ');
-    const technology = {
+    const techonology = {
       frontend: data.fe,
       backend: data.be,
       database: data.db,
@@ -100,28 +136,57 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
       sortDesc,
       desc,
       images,
-      technology,
-    };
-    await handleCreateProject(projectInfo).then(() => {
-      reset();
-      setSortDesc('');
-      setDesc('');
-      setImages([]);
-      closeDrawer();
-    });
+      techonology,
+    } as IProject;
+
+    if (idProject !== null && data) {
+      const newImages =
+        dataProject?.images !== images ? images : dataProject?.images;
+      // let newImages;
+      // if (dataProject?.images !== images) {
+      //   newImages = images;
+      // } else {
+      //   newImages = dataProject?.images;
+      // }
+      await handleUpdateProject({
+        ...projectInfo,
+        id: idProject,
+        images: newImages,
+      }).then(() => {
+        reset();
+        setSortDesc('');
+        setDesc('');
+        setImages([]);
+        closeDrawer();
+      });
+      toast.success('Update project success');
+    } else {
+      await handleCreateProject(projectInfo).then(() => {
+        reset();
+        setSortDesc('');
+        setDesc('');
+        setImages([]);
+        closeDrawer();
+      });
+      toast.success('Create project success');
+    }
+    dispatch(setProjectId(null));
   };
 
   return (
     <Drawer
       open={open}
-      onClose={closeDrawer}
+      onClose={() => {
+        closeDrawer();
+        dispatch(setProjectId(null));
+      }}
       className="p-4"
       placement="right"
       size={700}
     >
       <div className="flex items-center justify-between mb-6">
         <Typography variant="h5" color="blue-gray">
-          Create Project
+          {idProject !== null ? 'Update project' : 'Create Project'}
         </Typography>
         <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
           <svg
@@ -212,12 +277,28 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
             </div>
           </div>
 
+          <label className="block mb-3 text-black dark:text-white">
+            {idProject !== null && 'Giữ lại hình ảnh cũ'}
+          </label>
+
+          {images.length > 0 && (
+            <div className="mb-4.5 flex flex-col gap-6 xl:flex-row">
+              {images.map((image, index) => (
+                <img
+                  src={image}
+                  alt="image"
+                  className="w-[140px] h-[140px] object-cover rounded-full border shadow"
+                />
+              ))}
+            </div>
+          )}
+
           <div className="mb-4.5">
             <label className="block mb-3 text-black dark:text-white">
-              Hình ảnh dự án
+              {idProject !== null ? 'Hoặc thay hình ảnh mới' : 'Hình ảnh dự án'}
             </label>
             <input
-              onChange={handleOnChange}
+              onChange={(e) => handleUploadImage(e)}
               type="file"
               multiple
               className="w-full rounded-md border border-stroke p-3 outline-none transition file:mr-4 file:rounded file:border-[0.5px] file:border-stroke file:bg-[#EEEEEE] file:py-1 file:px-2.5 file:text-sm focus:border-primary file:focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:file:border-strokedark dark:file:bg-white/30 dark:file:text-white"
@@ -226,17 +307,6 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
               <p className="text-red-500">This field is required</p>
             )}
           </div>
-          {images.length > 0 && (
-            <div className="flex items-center gap-4 flex-wrap">
-              {images.map((image) => (
-                <img
-                  src={image}
-                  alt=""
-                  className="w-20 h-20 rounded-full object-cover"
-                />
-              ))}
-            </div>
-          )}
 
           <div className="mb-4.5 flex flex-col gap-6 xl:flex-row">
             <div className="w-full xl:w-1/2">
@@ -245,8 +315,8 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
               </label>
               <input
                 type="date"
-                {...register('startDate')}
                 placeholder="Nhận Ngày bắt đầu"
+                {...register('startDate')}
                 className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
               />
               {errors.startDate && (
@@ -259,8 +329,8 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
                 Ngày kết thúc
               </label>
               <input
-                type="date"
                 {...register('endDate')}
+                type="date"
                 placeholder="Nhập Ngày kết thúc"
                 className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
               />
@@ -313,8 +383,8 @@ const FormProject = ({ closeDrawer, open }: FormProjectProps) => {
             </label>
             <input
               type="text"
-              {...register('be')}
               placeholder="Công nghệ sử dụng"
+              {...register('be')}
               className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
             />
             {errors.be && <p className="text-red-500">{errors.be.message}</p>}

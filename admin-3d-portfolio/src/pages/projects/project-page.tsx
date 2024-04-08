@@ -15,8 +15,11 @@ import ProjectDetail from './components/project-detail';
 import Swal from 'sweetalert2';
 import { formatDate } from '~/utils/format-date';
 import { motion } from 'framer-motion';
+import { setProjectId } from '~/store/slice/project.slice';
+import { useAppDispatch } from '~/store/hooks';
 
 const ProjectPage = () => {
+  const dispatch = useAppDispatch();
   const { data } = useGetAllProjectsQuery();
   const [handleDeleteProject] = useDeleteProjectMutation();
 
@@ -205,6 +208,7 @@ const ProjectPage = () => {
                       className="hover:text-primary"
                       onClick={() => {
                         setOpen({ ...open, form: !open.form });
+                        dispatch(setProjectId(project.id));
                       }}
                     >
                       <EditIcon />
