@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "html-react-parser": "^5.1.10",
-    "sweetalert2": "^11.10.7"
-  },
-  "devDependencies": {
-    "sass": "^1.74.1"
-  }
-}
