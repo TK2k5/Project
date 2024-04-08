@@ -1,6 +1,5 @@
 import { Drawer, IconButton, Typography } from '@material-tailwind/react';
 
-import { Link } from 'react-router-dom';
 import { formatDate } from '~/utils/format-date';
 import parse from 'html-react-parser';
 import { useGetOneExperienceQuery } from '~/store/services/experience.service';

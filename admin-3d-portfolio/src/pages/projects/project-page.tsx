@@ -13,6 +13,7 @@ import { IProject } from '~/types/project.type';
 import { Link } from 'react-router-dom';
 import ProjectDetail from './components/project-detail';
 import Swal from 'sweetalert2';
+import clsxm from '~/utils/clsxm';
 import { formatDate } from '~/utils/format-date';
 import { motion } from 'framer-motion';
 import { setProjectId } from '~/store/slice/project.slice';
@@ -29,6 +30,19 @@ const ProjectPage = () => {
     detail: false,
     form: false,
   });
+
+  const ursersPerPage = 2;
+  // trang hiện tại
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  // lấy ra index của users cuối cùng trên trang hiện tại
+  const indexOfLastUser = currentPage * ursersPerPage;
+  // lấy ra index của users đầu tiên trên trang hiện tại
+  const indexOfFirstUser = indexOfLastUser - ursersPerPage;
+  // lấy ra users hiện tại
+  const currentUsers = projects.slice(indexOfFirstUser, indexOfLastUser);
+
+  // total page
+  const totalPage = Math.ceil(projects.length / ursersPerPage);
 
   useEffect(() => {
     if (!data) return;
@@ -87,9 +101,9 @@ const ProjectPage = () => {
             </div>
           </div>
 
-          {projects &&
-            projects.length > 0 &&
-            projects.map((project) => (
+          {currentUsers &&
+            currentUsers.length > 0 &&
+            currentUsers.map((project) => (
               <div
                 className="grid grid-cols-6 border-t border-stroke py-4.5 px-4 dark:border-strokedark md:px-6 2xl:px-7.5"
                 key={project.id}
@@ -217,6 +231,19 @@ const ProjectPage = () => {
                 </div>
               </div>
             ))}
+        </div>
+        <div className="flex items-center justify-center mt-5">
+          {Array.from({ length: totalPage }).map((_, index) => (
+            <Button
+              className={clsxm('py-2.5 px-5 mx-2 w-fit text-black ', {
+                'bg-gray-l10 text-black': index + 1 === currentPage,
+              })}
+              key={index}
+              onClick={() => setCurrentPage(index + 1)}
+            >
+              {index + 1}
+            </Button>
+          ))}
         </div>
       </DefaultLayout>
 
