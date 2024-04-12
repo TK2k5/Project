@@ -5,6 +5,9 @@ type TSection = {
 }
 
 type TConfig = {
+  submit: {
+    title: string
+  }
   html: {
     title: string
     fullName: string
@@ -39,6 +42,9 @@ type TConfig = {
 }
 
 export const config: TConfig = {
+  submit: {
+    title: 'Thank you'
+  },
   html: {
     title: '3D Test',
     fullName: 'John Doe',

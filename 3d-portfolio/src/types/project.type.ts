@@ -1,31 +1,44 @@
-export interface IProjects {
-  title: string
-  desc: string
-  items: []
-}
-
 export interface IProject {
   id: number
   title: string
-  sortDesc: string
+  sortDesc?: string
   desc: string
-  images: string[]
-  linkCode: string
+  images?: string[]
+  linkCode?: string
   linkDemo?: string
-  startDate: string
-  endDate: string
-  status: string
-  role: string
-  teamSize: number
-  technology: {
-    frontend: string[]
-    backend: string[]
-    database: string[]
-  }
+  startDate?: string
+  endDate?: string
+  status?: 'Completed' | 'In Progress' | 'Planned'
+  role?: 'Leader' | 'BA' | 'QA' | 'Developer' | 'Designer' | 'DevOps' | 'Other' | 'Intern'
+  teamSize?: number
+  techonology: ITechonology
 }
 
-// export interface ITechnology {
-//   frontend: string[]
-//   backend: string[]
-//   database: string[]
-// }
+export interface ITechonology {
+  frontend?: string[]
+  backend?: string[]
+  database?: string[]
+}
+
+export interface IProjectDocs {
+  items: IProject[]
+  title: string
+  desc: string
+}
+
+export interface IProjectForm {
+  title: string
+  sortDesc?: string
+  desc: string
+  images?: string[]
+  linkCode?: string
+  linkDemo?: string
+  startDate?: string
+  endDate?: string
+  status?: 'Completed' | 'In Progress' | 'Planned'
+  role?: 'Leader' | 'BA' | 'QA' | 'Developer' | 'Designer' | 'DevOps' | 'Other' | 'Intern'
+  teamSize?: number
+  fe: string
+  be: string
+  db: string
+}
