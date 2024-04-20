@@ -1,6 +1,7 @@
 import { Navigate, createBrowserRouter } from 'react-router-dom';
 
 import Buttons from '~/pages/UiElements/Buttons';
+import CertifacatePage from '~/pages/certificate/certifacate-page';
 import Chart from '~/pages/Chart';
 import ExperiencePage from '~/pages/experience-page/experience-page';
 import FormElements from '~/pages/Form/FormElements';
@@ -110,6 +111,17 @@ export const routes = createBrowserRouter([
       </>
     ),
   },
+
+  {
+    path: '/certificate',
+    element: (
+      <>
+        <PageTitle title="Certificate" />
+        <CertifacatePage />
+      </>
+    ),
+  },
+
   {
     path: '*',
     element: <NotFoundPage />,

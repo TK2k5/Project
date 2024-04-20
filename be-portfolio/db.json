@@ -168,33 +168,45 @@
       "id": 7
     }
   ],
-  "certificate": {
-    "title": "Certificate",
-    "desc": "I have completed various online courses and obtained certificates in different fields. These certificates reflect my continuous learning and passion for technology. I have completed various online courses and obtained certificates in different fields. These certificates reflect my continuous learning and passion for technology.",
-    "items": [
-      {
-        "id": 1,
-        "title": "Certificate 1",
-        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "image": "https://via.placeholder.com/150",
-        "link": "https://dangtienhung.com"
-      },
-      {
-        "id": 2,
-        "title": "Certificate 2",
-        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "image": "https://via.placeholder.com/150",
-        "link": "https://dangtienhung.com"
-      },
-      {
-        "id": 3,
-        "title": "Certificate 3",
-        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "image": "https://via.placeholder.com/150",
-        "link": "https://dangtienhung.com"
-      }
-    ]
-  },
+  "certificates": [
+    {
+      "title": "Certificate 1",
+      "link": "https://github.com/",
+      "desc": "<p>Helllo</p>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1713605808/Marathon/kye7jqf9cfkxqvymdpc6.png"
+      ],
+      "id": 4
+    },
+    {
+      "title": "Certificate 2",
+      "link": "https://github.com/",
+      "desc": "<p>Yay</p>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1713606135/Marathon/jiwbecgti29oesjovykf.webp",
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1713606136/Marathon/viijbdoliugglnzewv5k.jpg"
+      ],
+      "id": 5
+    },
+    {
+      "title": "Certificate 3",
+      "link": "https://github.com/",
+      "desc": "<p>adasd</p>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1713606209/Marathon/pgsjhkxgrqifa6i92rxk.png"
+      ],
+      "id": 6
+    },
+    {
+      "title": "Certificate 4",
+      "link": "https://github.com/",
+      "desc": "<p>das</p>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1713606220/Marathon/dbe0l1bmsexweyboqxsa.jpg"
+      ],
+      "id": 7
+    }
+  ],
   "experiences": [
     {
       "title": "DevOps",
@@ -229,6 +241,17 @@
         "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1712585698/Marathon/wulvnhbwzcijelsxqx2d.jpg"
       ],
       "id": 6
+    },
+    {
+      "title": "He",
+      "company": "dasdas",
+      "startDate": "2024-04-20",
+      "endDate": "2024-04-23",
+      "desc": "<p>asdasd</p>",
+      "images": [
+        "http://res.cloudinary.com/dkpmaaqcj/image/upload/v1713604244/Marathon/mzr80e5dd4dfh3d6vg0o.webp"
+      ],
+      "id": 7
     }
   ],
   "socials": {

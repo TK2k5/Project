@@ -1,3 +1,5 @@
+import { certificateApi } from './services/certificate.service';
+import certificateReducer from './slice/certificate.slice';
 import { configureStore } from '@reduxjs/toolkit';
 import { experienceApi } from './services/experience.service';
 import experienceReducer from './slice/experience.slice';
@@ -11,6 +13,7 @@ const middleware = [
   skillApi.middleware,
   projectApi.middleware,
   experienceApi.middleware,
+  certificateApi.middleware,
 ];
 
 export const store = configureStore({
@@ -24,6 +27,9 @@ export const store = configureStore({
     // experienceApi
     [experienceApi.reducerPath]: experienceApi.reducer,
     experience: experienceReducer,
+
+    [certificateApi.reducerPath]: certificateApi.reducer,
+    certificate: certificateReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),
