@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { experienceApi } from './services/experience.service'
 import { projectApi } from './services/project.service'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
 // ...
-const middlewares = [projectApi.middleware]
+const middlewares = [projectApi.middleware, experienceApi.middleware]
 
 export const store = configureStore({
   reducer: {
-    [projectApi.reducerPath]: projectApi.reducer
+    [projectApi.reducerPath]: projectApi.reducer,
+    [experienceApi.reducerPath]: experienceApi.reducer
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares)
 })

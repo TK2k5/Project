@@ -1,33 +1,31 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { ISocial } from './../../types/social.type';
+import { ISocial } from '~/types/social.type';
 
 export const socialApi = createApi({
   reducerPath: 'socialApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000' }),
   tagTypes: ['Social'],
   endpoints: (builder) => ({
-    getAllSocials: builder.query<ISocial[], void>({
+    getAllSocial: builder.query<ISocial[], void>({
       query: () => '/socials',
-      providesTags: (result) =>
-        // is result available?
-        result
-          ? // successful query
-            [
+      providesTags: (result) => {
+        return result
+          ? [
               ...result.map(({ id }) => ({ type: 'Social', id }) as const),
               { type: 'Social', id: 'LIST' },
             ]
-          : // an error occurred, but we still want to refetch this query when `{ type: 'Posts', id: 'LIST' }` is invalidated
-            [{ type: 'Social', id: 'LIST' }],
+          : [{ type: 'Social', id: 'LIST' }];
+      },
     }),
-    deleteSocial: builder.mutation<void, string>({
-      query: (id: string) => ({
+    deleteSocial: builder.mutation<void, number>({
+      query: (id: number) => ({
         url: `/socials/${id}`,
         method: 'DELETE',
       }),
-      invalidatesTags: (result, error, id) => [{ type: 'Social', id }],
+      invalidatesTags: (_, __, id) => [{ type: 'Social', id }],
     }),
-    addSocial: builder.mutation<ISocial, Partial<ISocial>>({
+    createSocial: builder.mutation<ISocial, Partial<ISocial>>({
       query: (body) => ({
         url: '/socials',
         method: 'POST',
@@ -39,7 +37,7 @@ export const socialApi = createApi({
       query: (id) => {
         return `/socials/${id}`;
       },
-      providesTags: (result, error, id) => [{ type: 'Social', id }],
+      providesTags: (_, __, id) => [{ type: 'Social', id }],
     }),
     updateSocial: builder.mutation<ISocial, Partial<ISocial>>({
       query: (body) => ({
@@ -47,15 +45,15 @@ export const socialApi = createApi({
         method: 'PUT',
         body,
       }),
-      invalidatesTags: (result, error, { id }) => [{ type: 'Social', id }],
+      invalidatesTags: (__, _, { id }) => [{ type: 'Social', id }],
     }),
   }),
 });
 
 export const {
-  useGetAllSocialsQuery,
+  useGetAllSocialQuery,
   useDeleteSocialMutation,
-  useAddSocialMutation,
+  useCreateSocialMutation,
   useGetOneSocialQuery,
   useUpdateSocialMutation,
 } = socialApi;

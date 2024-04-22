@@ -13,6 +13,7 @@ import Settings from '~/pages/Settings';
 import SignIn from '~/pages/Authentication/SignIn';
 import SignUp from '~/pages/Authentication/SignUp';
 import SkillPage from '~/pages/SkillPage/SkillPage';
+import SocialPage from '~/pages/SocialPage/SocialPage';
 import Tables from '~/pages/Tables';
 
 export const routes = createBrowserRouter([
@@ -118,6 +119,16 @@ export const routes = createBrowserRouter([
       <>
         <PageTitle title="Certificate" />
         <CertifacatePage />
+      </>
+    ),
+  },
+
+  {
+    path: '/social',
+    element: (
+      <>
+        <PageTitle title="social" />
+        <SocialPage />
       </>
     ),
   },

@@ -8,12 +8,15 @@ import projectReducer from './slice/project.slice';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { skillApi } from './services/skill.service';
 import skillReducer from './slice/skill.slice';
+import { socialApi } from './services/social.service';
+import socialReducer from './slice/social.slice';
 
 const middleware = [
   skillApi.middleware,
   projectApi.middleware,
   experienceApi.middleware,
   certificateApi.middleware,
+  socialApi.middleware,
 ];
 
 export const store = configureStore({
@@ -30,6 +33,9 @@ export const store = configureStore({
 
     [certificateApi.reducerPath]: certificateApi.reducer,
     certificate: certificateReducer,
+
+    [socialApi.reducerPath]: socialApi.reducer,
+    social: socialReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),

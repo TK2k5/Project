@@ -23,10 +23,7 @@
     "experience": "3 years",
     "projects": "20+",
     "clients": "10+",
-    "languages": [
-      "English",
-      "Vietnamese"
-    ],
+    "languages": ["English", "Vietnamese"],
     "works": [
       {
         "title": "Fullstack Developer",
@@ -73,14 +70,8 @@
           "Redux",
           "Bootstrap"
         ],
-        "backend": [
-          "NodeJS",
-          "Express"
-        ],
-        "database": [
-          "NodeJS",
-          "Express"
-        ]
+        "backend": ["NodeJS", "Express"],
+        "database": ["NodeJS", "Express"]
       },
       "id": 3
     },
@@ -97,16 +88,9 @@
         "http://res.cloudinary.com/dcwdrvxdg/image/upload/v1712235628/marathon-fe/gx1daoib5hokjnclwtmd.png"
       ],
       "techonology": {
-        "frontend": [
-          "html",
-          "css"
-        ],
-        "backend": [
-          "nodejs"
-        ],
-        "database": [
-          "mongdb"
-        ]
+        "frontend": ["html", "css"],
+        "backend": ["nodejs"],
+        "database": ["mongdb"]
       },
       "id": 5
     },
@@ -123,20 +107,9 @@
         "http://res.cloudinary.com/dcwdrvxdg/image/upload/v1712241793/marathon-fe/si0539mwnoosbcdcygrx.png"
       ],
       "techonology": {
-        "frontend": [
-          "javasciript",
-          "html",
-          "css"
-        ],
-        "backend": [
-          "c#",
-          "java",
-          "nodejs"
-        ],
-        "database": [
-          "sql",
-          "nosql"
-        ]
+        "frontend": ["javasciript", "html", "css"],
+        "backend": ["c#", "java", "nodejs"],
+        "database": ["sql", "nosql"]
       },
       "id": 6
     },
@@ -153,17 +126,9 @@
         "http://res.cloudinary.com/dcwdrvxdg/image/upload/v1712412703/marathon-fe/xuken8dwkf9hgm9mhs5b.jpg"
       ],
       "techonology": {
-        "frontend": [
-          "fefef",
-          "ahihi",
-          "akdfs"
-        ],
-        "backend": [
-          "feefefefefe"
-        ],
-        "database": [
-          "feefefefefe"
-        ]
+        "frontend": ["fefef", "ahihi", "akdfs"],
+        "backend": ["feefefefefe"],
+        "database": ["feefefefefe"]
       },
       "id": 7
     }
@@ -254,16 +219,37 @@
       "id": 7
     }
   ],
-  "socials": {
-    "facebook": "https://facebook.com",
-    "twitter": "https://twitter.com",
-    "linkedin": "https://linkedin.com",
-    "github": "https://github.com",
-    "instagram": "https://instagram.com"
-  },
-  "menu": [
-    "About",
-    "Work",
-    "Contact"
-  ]
+  "socials": [
+    {
+      "social": "facebook",
+      "link": "https://facebook.com",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "social": "twitter",
+      "link": "https://twitter.com"
+    },
+    {
+      "id": 3,
+      "social": "linkedin",
+      "link": "https://linkedin.com"
+    },
+    {
+      "id": 4,
+      "social": "github",
+      "link": "https://github.com"
+    },
+    {
+      "social": "Instagram",
+      "link": "https://instagram.com",
+      "id": 5
+    },
+    {
+      "social": "Youtube",
+      "link": "https://www.youtube.com/watch?v=H7uVs7mFmgg",
+      "id": 6
+    }
+  ],
+  "menu": ["About", "Work", "Contact"]
 }
